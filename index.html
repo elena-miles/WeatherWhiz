@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeatherWhiz</title>
+    <link rel="stylesheet" href="src/index.css">
 </head>
 <body>
+<div class="weatherwhiz-app">
 <header>
+
 <form>
 <input type="search" placeholder="Enter a city..." required/>
 <input type="submit" value="search"/>
 </form>
 </header>
 <main>
-    <div class="full-app">
-    <div class="content-image-box">
 <h1>Paris</h1>
 <p>
 Monday, 14:49, Scattered clouds
@@ -29,14 +30,13 @@ humidity: 66%, Wind: 3.13 km/h
 <div class="display-condition description"></div>
 </div>
 
-</div>
+
 <div class="nextdays-forcast">
 <div>Mon</div>
 <div>Tue</div>
 <div>Wed</div>
 <div> Thurs</div>
 <div>Fri</div>
-</div>
 </div>
 </main>
 
@@ -49,4 +49,5 @@ and <a href="https://weatherwhiz-shecodes.netlify.app/" target="_blank">
 hosted on Netlify</a>
 </footer>
 </body>
+</div>
 </html>
