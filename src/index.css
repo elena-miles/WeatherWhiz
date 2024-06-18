@@ -36,16 +36,15 @@ a{
 color:white;
 }
 
-.search-form{
-max-width: 75%;
-max-height: ;
-border: none;
-border-radius: 8px;
-background: #303f43;
-}
-.search-form-input{
-
+.search-form-input {
+    width: 80%;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    background: #303f43;
+    padding: 20px;
+    color: white; 
 }
 .search-form-button{
-
+background: #e8ef1c;
 }
