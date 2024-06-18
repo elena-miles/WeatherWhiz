@@ -1,22 +1,51 @@
 body{
     background-color: #303f43;
+    font-family: "Roboto", sans-serif;
 }
 
 .weatherwhiz-app {
 background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/129/452/original/ivan-ulamec-F-kdP4Hk7lg-unsplash.jpg?1718720484");
 background-size:cover; 
 background-repeat:no-repeat;
-height: 400px; 
-max-width: 500px;
+max-height: 400px; 
+max-width: 400px;
 margin: 60px auto;
-padding: 50px;
-border-radius: 8px;
+padding: 20px 10px 20px 10px;
+border-radius: 15px;
 box-shadow:10px 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-.roboto-regular {
-font-family: "Roboto", sans-serif;
-font-weight: 400;
-font-style: normal;
+ul{
+padding: 0;
+}
+li {
+display: inline-block;
+background: #303f43;
+width: 60px;
+height: 60px;
+}
+
+.forecast{
+padding: 0px; 
+margin:0px ; 
+}
+footer{
 color: white;
+}
+a{
+color:white;
+}
+
+.search-form{
+max-width: 75%;
+max-height: ;
+border: none;
+border-radius: 8px;
+background: #303f43;
+}
+.search-form-input{
+
+}
+.search-form-button{
+
 }
