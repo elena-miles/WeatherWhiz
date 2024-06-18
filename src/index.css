@@ -25,33 +25,39 @@ display: inline-block;
 background: #303f43;
 width: 60px;
 height: 60px;
+border: 2px solid grey;
+color: aliceblue;
+font-size: 16px;
+line-height: 30px;
+text-align: center;
 }
 
+h1{
+color: black;
+}
 .forecast{
 padding: 0px; 
 margin:0px ; 
 }
 footer{
-color: white;
+color: grey;
 }
 a{
-color:white;
+color: grey;
 }
 
 .search-form-input {
 width: 70%;
-height: 30px;
 border: none;
 border-radius: 8px;
 background: #303f43;
-padding: 20px;
-color: white; 
+padding: 15px 20px;
+color: black; 
 }
 .search-form-button{
-width: 20%;
-background: #e8ef1c;
-height: 30px;
+background: #303f43 ;
+padding: 15px 20px;
 border: none;
-border-radius: 8px;
-padding: 20px; 
+border-radius: 6px;
+color: white;
 }
