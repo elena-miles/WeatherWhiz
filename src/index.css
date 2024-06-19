@@ -39,9 +39,17 @@ text-align: center;
 box-shadow:10px 10px 20px rgba(0, 0, 0, 0.4)
 }
 
+.city-country{
+margin-left: 10px;
+color: #cac6af;
+}
+
 h1{
-color: black;
 font-size: 40px;
+margin-bottom: 5px;
+}
+h2{
+margin-top: 0px;
 }
 .forecast{
 padding: 0px; 
