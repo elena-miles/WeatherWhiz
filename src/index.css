@@ -53,7 +53,7 @@ p{
   margin: 0 auto;
   color: #cac6af;
   font-weight: lighter;
-  padding-bottom: 10px;  
+  padding-bottom:10px;  
 }
 .weather-data{
 display: flex;
@@ -73,15 +73,16 @@ padding: 0px;
 margin:0px ; 
 }
 footer{
-color: black;
+color: #cac6af;
 font-size: 12px;
+font-weight: lighter;
 text-align: center;
 margin: 10px auto;
 border-top: .5px solid #303f43;
 padding: 5px 0 0 0;
 }
 a{
-color: black;
+color: #cac6af;
 font-weight: bolder;
 }
 
@@ -107,10 +108,15 @@ box-shadow:10px 10px 20px rgba(0, 0, 0, 0.4)
 display: inline-flex; 
 justify-content: right;
 padding-top: 25px;
+}
 
 .degree-celcius{
 font-size: 30px;
 }
 .display-degree-celsius{
     font-size: 45px;
+}
+.display-icon{
+line-height: 40px;
+font-size: 38px ;
 }
