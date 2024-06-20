@@ -8,7 +8,7 @@ background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/fi
 background-size:cover; 
 background-repeat:no-repeat;
 max-height: 400px; 
-max-width: 400px;
+max-width: 480px;
 margin: 60px auto;
 padding: 20px 20px 20px 20px;
 border-radius: 15px;
@@ -74,7 +74,7 @@ margin:0px ;
 }
 footer{
 color: #cac6af;
-font-size: 12px;
+font-size: 14px;
 font-weight: lighter;
 text-align: center;
 margin: 10px auto;
@@ -118,5 +118,6 @@ font-size: 30px;
 }
 .display-icon{
 line-height: 40px;
-font-size: 38px ;
+font-size: 32px ;
+padding-top: 10px;
 }
