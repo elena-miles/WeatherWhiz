@@ -39,25 +39,33 @@ text-align: center;
 box-shadow:10px 10px 20px rgba(0, 0, 0, 0.4)
 }
 h1{
-margin: 30px 0 0 0 ;  
+margin: 30px 0 0 0 ;
+font-weight: lighter; 
+font-size: 50px; 
 }
 h2{
-margin: 8px auto;
+margin: 0px auto;
 font-size: 20px;
 font: weight 20px;
+font-weight: lighter;
 }
 p{
-  margin: 0 auto;  
+  margin: 0 auto;
+  color: #cac6af;
+  font-weight: lighter;
+  padding-bottom: 10px;  
 }
 .weather-data{
 display: flex;
 justify-content: space-between ;
+font-weight: lighter;
+color: #cac6af;
 }
 .city-country{
 color: #cac6af;
-line-height: 38px;
+line-height: 45px;
 margin-top: 0px;
-font-size: 32px;
+font-size: 45px;
 }
 
 .forecast{
