@@ -1,10 +1,10 @@
 
 function handleSearchSubmit(event) {
     event.preventDefault(); 
-    let searchInput = document.querySelector("#search-input");
+    let searchInput = document.querySelector("#search-form-input");
 
     let cityElement=document.querySelector("#weather-data-city"); 
-    cityElement= searchInput.value;
+    cityElement = searchInput.value;
     cityElement.innerHTML = searchInput.value; 
 }
 
