@@ -57,23 +57,23 @@ text-align: center;
 box-shadow:10px 10px 20px rgba(0, 0, 0, 0.4)
 }
 h1{
-margin: 30px 0 0 0 ;
+margin: 25px 0 0 0 ;
 font-weight: lighter; 
-font-size: 40px; 
-padding-left: 20px;
+font-size: 35px; 
+padding-left: 5px;
 }
 h2{
 margin: 0px auto;
 font-size: 20px;
 font: weight 5px;
-padding-left:20px;
+padding-left:5px;
 }
 p{
   margin: 0 auto;
   color: #cac6af;
   font-weight: lighter;
   padding-bottom: 5px;
-  padding-left: 20px;  
+  padding-left: 5px;  
 }
 .weather-data{
 display: flex;
@@ -110,17 +110,17 @@ font-weight: bolder;
 display: inline-flex; 
 justify-content: right;
 padding-top: 25px;
-padding-right: 10px;
+padding-right: 5px;
 }
 
 .degree-celcius{
 font-size: 30px;
 }
 .display-degree-celsius{
-    font-size: 60px;
+    font-size: 35px;
+    font-weight: 100;
 }
 .display-icon{
 line-height: 40px;
 font-size: 32px ;
-padding-top: 10px;
 }
