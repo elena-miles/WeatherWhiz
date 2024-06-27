@@ -33,15 +33,16 @@ function updateWeather(response) {
     let temperatureElement = document.querySelector("#display-degree-celsius");
     temperatureElement.innerHTML = Math.round(response.data.temperature.current);
 
-    let weatherConditionsElement = document.querySelector("#condition-description"); //
+    let weatherConditionsElement = document.querySelector("#condition-description"); 
     weatherConditionsElement.innerHTML =`${response.data.condition.description}`;
 
     let humidityWindElement = document.querySelector("#humidity-wind-description"); 
     humidityWindElement.innerHTML = `humidity:${response.data.temperature.humidity}% | Wind: ${response.data.wind.speed} km/h`;
 
     let largeIconElement = document.querySelector("#display-icon");
-    largeIconElement.innerHTML = response.data.condition.icon; //update
+    largeIconElement.innerHTML = response.data.condition.icon; //not working fix this 
     }
+console.log(response.data); 
 
     let weatherDayTimeElement = document.querySelector("#weather-details-element");
     weatherDayTimeElement.innerHTML = `${response.data.date} | ${response.data.time}`; //undefined in console work on a new time day function
