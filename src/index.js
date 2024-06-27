@@ -1,8 +1,8 @@
 
 function searchCity (city) {
-let apiKey = "ffoa584b071af31b9db038336tec0bd6";
-let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`; 
-axios.get(apiURL).then(updateWeather);
+    let apiKey = "ffoa584b071af31b9db038336tec0bd6";
+    let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`; 
+    axios.get(apiURL).then(updateWeather);
 let weatherDetailsElement = document.querySelector("#display-degree-celsius");
 }
 
@@ -14,7 +14,6 @@ let city = normalizedInput.toLowerCase().split(' ').map(word => {
     return word.charAt(0).toUpperCase() + word.slice(1);
   }).join(' ');
 let cityElement = document.querySelector("#city"); 
-
 cityElement.innerHTML = city;
 searchCity (city); //calling search city function 
 }
@@ -36,13 +35,15 @@ function updateWeather(response) {
     let weatherConditionsElement = document.querySelector("#condition-description"); 
     weatherConditionsElement.innerHTML =`${response.data.condition.description}`;
 
-    let humidityWindElement = document.querySelector("#humidity-wind-description"); 
-    humidityWindElement.innerHTML = `humidity:${response.data.temperature.humidity}% | Wind: ${response.data.wind.speed} km/h`;
+    let humidityElement = document.querySelector("#humidity"); 
+    humidityElement.innerHTML = `humidity:${response.data.temperature.humidity}%`;
+    
+    let windElement =document.querySelector("#wind");
+    windElement.innerHTML = `| Wind: ${response.data.wind.speed} km/h`;
+}
+    //let largeIconElement = document.querySelector("#display-icon");
+  //  largeIconElement.innerHTML = response.data.condition.icon; //not working fix this 
+   // }
 
-    let largeIconElement = document.querySelector("#display-icon");
-    largeIconElement.innerHTML = response.data.condition.icon; //not working fix this 
-    }
-console.log(response.data); 
-
-    let weatherDayTimeElement = document.querySelector("#weather-details-element");
-    weatherDayTimeElement.innerHTML = `${response.data.date} | ${response.data.time}`; //undefined in console work on a new time day function
+   // let weatherDayTimeElement = document.querySelector("#weather-details-element");
+ //   weatherDayTimeElement.innerHTML = `${response.data.date} | ${response.data.time}`; //undefined in console work on a new time day function
