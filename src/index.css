@@ -5,6 +5,10 @@ font-family: "Roboto", sans-serif;
 opacity:0.85;
 }
 
+header{
+border: #303f43;
+margin: 10px 0px;
+}
 .weatherwhiz-app {
 background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/129/452/original/ivan-ulamec-F-kdP4Hk7lg-unsplash.jpg?1718720484");
 background-size:cover; 
@@ -63,7 +67,7 @@ h1{
 margin: 25px 0 0 0 ;
 font-weight: bolder; 
 font-size: 36px; 
-padding-left: 1px;
+padding-left: 0px;
 color:#e4fe04;
 }
 h2{
@@ -131,10 +135,15 @@ font-size: 45px;
 font-weight: bolder;
 color: #CAC6AF ;
 }
-.display-icon{
-width: 70px;
-height: 88px;
-margin-right:12px;
+
+.display-icon {
+  max-width: 70px;
+  max-height: 88px;
+  display: inline-block;
+}
+.weather-app {
+  width: 100%;
+  height: auto;
 }
 
 #wind, #weekday,#time,#humidity{
