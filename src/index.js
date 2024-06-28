@@ -4,6 +4,7 @@ function searchCity (city) {
     let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`; 
     axios.get(apiURL).then(updateWeather);
 let weatherDetailsElement = document.querySelector("#display-degree-celsius");
+console.log(response.data);
 }
 
 function handleSearchSubmit(event){
@@ -21,43 +22,40 @@ searchCity (city); //calling search city function
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-function formatDate (date){
-
+function formatDate(timestamp) {
+let date = new Date(timestamp * 1000);
 let hours = date.getHours();
-let minutes = date.getMinutes ();
-let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday","Saturday"];
-let day = days[ date.getDay];
-if (minutes < 10){
- minutes = `0${minutes}`;    
+let minutes = date.getMinutes();
+if (minutes < 10) {
+    minutes = `0${minutes}`;
 }
-return `${day} ${hours}: ${minutes}`;
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+let day = days[date.getDay()];
+return `${day} | ${hours}:${minutes}`;
 }
 
 function updateWeather(response) {
-    let cityElement = document.querySelector("#city");
+let cityElement = document.querySelector("#city");
     cityElement.innerHTML = response.data.city;
 
-    let countryElement = document.querySelector("#country");
+let countryElement = document.querySelector("#country");
     countryElement.innerHTML = response.data.country;
 
-    let temperatureElement = document.querySelector("#display-degree-celsius");
+let temperatureElement = document.querySelector("#display-degree-celsius");
     temperatureElement.innerHTML = Math.round(response.data.temperature.current);
 
-    let weatherConditionsElement = document.querySelector("#condition-description"); 
+let weatherConditionsElement = document.querySelector("#condition-description"); 
     weatherConditionsElement.innerHTML =`${response.data.condition.description}`;
 
-    let humidityElement = document.querySelector("#humidity"); 
-    humidityElement.innerHTML = `humidity:${response.data.temperature.humidity}%`;
+let humidityElement = document.querySelector("#humidity"); 
+    humidityElement.innerHTML = `humidity:${response.data.temperature.humidity}`;
     
-    let windElement =document.querySelector("#wind");
-    windElement.innerHTML = `| Wind: ${response.data.wind.speed} km/h`;
+let windElement =document.querySelector("#wind");
+    windElement.innerHTML = `Wind: ${response.data.wind.speed}`;
 
-    let date = new date(response.data.time * 1000); 
-    let timeElement = document.querySelector("#time");
-    timeElement.innerHTML = formatDate(date); // not working fix 
+let dateElement = document.querySelector("#time");
+    dateElement.innerHTML = formatDate(response.data.time);
 
-    //let iconElement = document.querySelector("#icon");ClassName
-    //iconElement.innerHTML 
-    //let icon = <img src="`${response.data.condition.icon_url}`" class="weather-ap" 
-    // } > </img>; //not working
+let iconElement = document.querySelector("#icon");
+iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app" alt="weather icon" />`;
 }
