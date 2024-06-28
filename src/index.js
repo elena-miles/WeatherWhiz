@@ -21,6 +21,17 @@ searchCity (city); //calling search city function
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
+function formatDate (date){
+
+let hours = date.getHours();
+let minutes = date.getMinutes ();
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday","Saturday"];
+let day = days[ date.getDay];
+if (minutes < 10){
+ minutes = `0${minutes}`;    
+}
+return `${day} ${hours}: ${minutes}`;
+}
 
 function updateWeather(response) {
     let cityElement = document.querySelector("#city");
@@ -40,10 +51,13 @@ function updateWeather(response) {
     
     let windElement =document.querySelector("#wind");
     windElement.innerHTML = `| Wind: ${response.data.wind.speed} km/h`;
-}
-    //let largeIconElement = document.querySelector("#display-icon");
-  //  largeIconElement.innerHTML = response.data.condition.icon; //not working fix this 
-   // }
 
-   // let weatherDayTimeElement = document.querySelector("#weather-details-element");
- //   weatherDayTimeElement.innerHTML = `${response.data.date} | ${response.data.time}`; //undefined in console work on a new time day function
+    let date = new date(response.data.time * 1000); 
+    let timeElement = document.querySelector("#time");
+    timeElement.innerHTML = formatDate(date); // not working fix 
+
+    //let iconElement = document.querySelector("#icon");ClassName
+    //iconElement.innerHTML 
+    //let icon = <img src="`${response.data.condition.icon_url}`" class="weather-ap" 
+    // } > </img>; //not working
+}
