@@ -13,7 +13,7 @@ margin: 10px 0px;
 background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/129/452/original/ivan-ulamec-F-kdP4Hk7lg-unsplash.jpg?1718720484");
 background-size:cover; 
 background-repeat:no-repeat;
-max-height: 400px; 
+max-height: 500px; 
 max-width: 480px;
 margin: 60px auto;
 padding: 20px 20px 20px 20px;
@@ -137,13 +137,9 @@ color: #CAC6AF ;
 }
 
 .display-icon {
-  max-width: 70px;
-  max-height: 88px;
-  display: inline-block;
-}
-.weather-app {
   width: 100%;
   height: auto;
+  display: inline-block;
 }
 
 #wind, #weekday,#time,#humidity{
