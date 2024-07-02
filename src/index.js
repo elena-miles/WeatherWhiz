@@ -61,13 +61,25 @@ iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="w
 }
 
 
+function displayForecast(){
+let days = ["Tues","Wed","Thu","Fri","Sat","Sun"];
+forecastHtml = ""; 
 
-let forcast = document.querySelector("#weather-forecast");
-forcast.innerHTML = ` <li>
-<div class="forcast-day">Mon</div>
-<div class="forcast-icon">⛅️</div>
-<div class="high-low-container">
-<span class="forcast-highest-temp">19°</span> 
-<span class="forcast-lowest-temp"> 13°</span>
-</div>
-</li> `; 
+days.forEach(function (day) {
+    forecastHtml = 
+    forecastHtml + 
+    `
+    <li>
+    <div class="forcast-day">${day}</div>
+    <div class="forcast-icon">⛅️</div>
+    <div class="high-low-container">
+    <span class="forcast-highest-temp">19°</span> 
+    <span class="forcast-lowest-temp"> 13°</span>
+    </div>
+    </li> 
+    `;
+});
+forecastElement.innerHTML = forecastHtml; 
+}
+let forecastElement = document.querySelector("#weather-forecast");
+displayForecast();
