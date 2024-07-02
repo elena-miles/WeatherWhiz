@@ -59,3 +59,15 @@ let dateElement = document.querySelector("#time");
 let iconElement = document.querySelector("#icon");
 iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app" alt="weather icon" />`;
 }
+
+
+
+let forcast = document.querySelector("#weather-forecast");
+forcast.innerHTML = ` <li>
+<div class="forcast-day">Mon</div>
+<div class="forcast-icon">⛅️</div>
+<div class="high-low-container">
+<span class="forcast-highest-temp">19°</span> 
+<span class="forcast-lowest-temp"> 13°</span>
+</div>
+</li> `; 
