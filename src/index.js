@@ -58,11 +58,19 @@ let dateElement = document.querySelector("#time");
 
 let iconElement = document.querySelector("#icon");
 iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app" alt="weather icon" />`;
+
+getForecast(response.data.city);
 }
 
+function getForecast (city){
+let apiKey = `ffoa584b071af31b9db038336tec0bd6`; 
+let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`; 
+axios (apiURL).then(displayForecast); 
+}
 
-function displayForecast(){
-let days = ["Tues","Wed","Thu","Fri","Sat","Sun"];
+function displayForecast(response){
+  
+let days = ["Tues","Wed","Thu","Fri","Sat"];
 forecastHtml = ""; 
 
 days.forEach(function (day) {
