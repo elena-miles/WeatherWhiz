@@ -57,6 +57,8 @@ function updateWeather(response) {
 
     let iconElement = document.querySelector("#icon");
     iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app" alt="weather icon" />`;
+
+    getForecastData(response.data.city); // call
 }
 
 
@@ -69,9 +71,8 @@ function getForecastData(city){
 }
 
 function displayForecast (response) {
-    console.log(response.data);
         let forecastElement = document.querySelector("#weather-forecast");
-
+console.log(response.data);
         let days =["Tues", "Wed", "Thu", "Fri", "Sat"];
         let forecastHtml = ""; 
 
@@ -93,6 +94,4 @@ function displayForecast (response) {
         forecastElement.innerHTML = forecastHtml;  
         }
 
-searchCity("Paris"); 
-
-getForecastData("Paris");
+searchCity(); 
