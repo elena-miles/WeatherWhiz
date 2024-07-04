@@ -141,11 +141,13 @@ margin-top: 3px;
 color: #e4fe04;
 font-weight: bold;
 }
-
-.forcast-icon{
-line-height: 28px;
-margin: 0 auto;
+.forecast-icon img {
+  width: 25px;
+  height: 25px;
+  display: block;
+  margin: 0 auto;
 }
+
 
 .high-low-container{
   margin-bottom: 3px;
@@ -173,3 +175,19 @@ ul{
   padding: 5px auto;
 
   }
+
+  .forecast-item {
+    display: inline-block;
+    background: #303f43;
+    width: 60px;
+    height: 75px;
+    border: 1px inset black;
+    border-radius: 6px;
+    color: #cac6af;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 3px 4px black;
+    padding: 5px auto;
+}
