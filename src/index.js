@@ -61,6 +61,13 @@ function updateWeather(response) {
     getForecast("paris");
 }
 
+
+function getForecastData(city){
+let apiKey ="ffoa584b071af31b9db038336tec0bd6"; 
+let apiURL =`https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+ console.log(apiURL); 
+}
+
 function displayForecast () {
         let forecastElement = document.querySelector("#weather-forecast");
 
@@ -85,4 +92,5 @@ function displayForecast () {
         forecastElement.innerHTML = forecastHtml;  
         }
 displayForecast(); 
+getForecastData ("Paris");
 
