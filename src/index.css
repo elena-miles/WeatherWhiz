@@ -16,7 +16,7 @@ background-repeat:no-repeat;
 max-height: 650px; 
 max-width: 480px;
 margin: 60px auto;
-padding: 20px 20px 20px 20px;
+padding: 20px 10px 20px 10px;
 border-radius: 15px;
 box-shadow:10px 10px 20px rgba(0, 0, 0, 0.4);
 }
@@ -80,7 +80,7 @@ font-size: 45px;
 }
 
 .forecast{
-padding: 0px; 
+padding:0px; 
 margin:0px ; 
 }
 
@@ -142,7 +142,6 @@ font-weight: bolder;
 .forcast-day{
 font-size: 16px;
 font-weight: 200px;
-margin-bottom: 10px;
 margin-top: 13px;
 }
 
@@ -152,8 +151,8 @@ font-weight: bold;
 }
 
 img.forecast-icon{
-  width: 25px;
-  height: 25px;
+  width: 32px;
+  height: 30px;
   display: block;
   margin: 0 auto;
   padding: 0 auto;
@@ -176,9 +175,9 @@ ul{
   li {
   display: inline-block;
   background: #303f43;
-  width: 68px;
-  height: 90px;
-  border-radius: 8px;
+  width: 65px;
+  height: 88px;
+  border-radius: 4px;
   color: #cac6af;
   font-size: 14px;
   line-height: 15px;
