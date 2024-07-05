@@ -69,7 +69,7 @@ function getForecastData(city){
     console.log(apiURL); 
 
 }
-// seems like the response from the api is not working , suddenly blank after working beforehand 
+// seems like the response from the api is buggy
 function displayForecast(response) {
     let forecastElement = document.querySelector("#weather-forecast");
     let forecast = response.data.daily;
@@ -77,7 +77,7 @@ function displayForecast(response) {
     let forecastHtml = ""; 
 
     forecast.forEach(function (day, index) {
-        if (index < 5) {  // Display the first 5 days
+        if (index < 5) {  // Display 5 days
             let dayName = new Date(day.time * 1000).toLocaleDateString("en-US", { weekday: 'short' });
 
             forecastHtml += `
@@ -98,4 +98,5 @@ function displayForecast(response) {
 }
 
 
-searchCity("Paris"); 
+searchCity("Rotterdam"); 
+displayForecast ("Rotterdam");
