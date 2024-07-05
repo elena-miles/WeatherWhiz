@@ -63,13 +63,13 @@ function updateWeather(response) {
 
 
 function getForecastData(city){
-    let apiKey ="ffoa584b071af31b9db038336tec0bd6"; 
-    let apiURL =`https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    let apiKey = "ffoa584b071af31b9db038336tec0bd6"; 
+    let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
     axios(apiURL).then(displayForecast);
     console.log(apiURL); 
 
 }
-
+/// seems like the response from the api is not working , suddenly blank after working beforehand 
 function displayForecast (response) {
         let forecastElement = document.querySelector("#weather-forecast");
 console.log(response.data);
@@ -80,13 +80,13 @@ console.log(response.data);
         forecastHtml = forecastHtml +
         `
                 <li class="forcast-item">
-                <div class="forcast-day"> ${day}</div>
+                <div class="forcast-day"> Tue</div>
                 <div class="forcast-icon">
                 <img src = ""/> 
                 </div>
                 <div class="high-low-container">
-                <span class="forcast-highest-temp">9°</span> 
-                <span class="forcast-lowest-temp">9°</span>
+                <span class="forcast-lowest-temp">${Math.round(day.temperature.maximum)}°</span> 
+                <span class="forcast-lowest-temp">${Math.round(day.temperature.minimum)}°</span>
                 </div>
                 </li> 
                 `;
@@ -94,4 +94,4 @@ console.log(response.data);
         forecastElement.innerHTML = forecastHtml;  
         }
 
-searchCity(); 
+searchCity("Paris"); 
