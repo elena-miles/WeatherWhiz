@@ -69,29 +69,33 @@ function getForecastData(city){
     console.log(apiURL); 
 
 }
-/// seems like the response from the api is not working , suddenly blank after working beforehand 
-function displayForecast (response) {
-        let forecastElement = document.querySelector("#weather-forecast");
-console.log(response.data);
-        let days =["Tues", "Wed", "Thu", "Fri", "Sat"];
-        let forecastHtml = ""; 
+// seems like the response from the api is not working , suddenly blank after working beforehand 
+function displayForecast(response) {
+    let forecastElement = document.querySelector("#weather-forecast");
+    let forecast = response.data.daily;
 
-        days.forEach(function (day) {  
-        forecastHtml = forecastHtml +
-        `
+    let forecastHtml = ""; 
+
+    forecast.forEach(function (day, index) {
+        if (index < 5) {  // Display the first 5 days
+            let dayName = new Date(day.time * 1000).toLocaleDateString("en-US", { weekday: 'short' });
+
+            forecastHtml += `
                 <li class="forcast-item">
-                <div class="forcast-day"> Tue</div>
-                <div class="forcast-icon">
-                <img src = ""/> 
-                </div>
-                <div class="high-low-container">
-                <span class="forcast-lowest-temp">${Math.round(day.temperature.maximum)}°</span> 
-                <span class="forcast-lowest-temp">${Math.round(day.temperature.minimum)}°</span>
-                </div>
-                </li> 
-                `;
-            });
-        forecastElement.innerHTML = forecastHtml;  
+                    <div class="forcast-day">${dayName}</div>
+                    <div class="forcast-icon">
+                        <img src="${day.condition.icon_url}" alt="weather icon" />
+                    </div>
+                    <div class="high-low-container">
+                        <span class="forcast-highest-temp">${Math.round(day.temperature.maximum)}°</span>
+                        <span class="forcast-lowest-temp">${Math.round(day.temperature.minimum)}°</span>
+                    </div>
+                </li>`;
         }
+    });
+
+    forecastElement.innerHTML = forecastHtml;
+}
+
 
 searchCity("Paris"); 
