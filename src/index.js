@@ -60,7 +60,11 @@ function updateWeather(response) {
 
     getForecastData(response.data.city); // call
 }
-
+function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    return days[date.getDay()];
+}
 
 function getForecastData(city){
     let apiKey = "ffoa584b071af31b9db038336tec0bd6"; 
@@ -73,18 +77,18 @@ function getForecastData(city){
 function displayForecast(response) {
     let forecastElement = document.querySelector("#weather-forecast");
     let forecast = response.data.daily;
-
     let forecastHtml = ""; 
 
+// when i created formatDay function 
     forecast.forEach(function (day, index) {
         if (index < 5) {  // Display 5 days
             let dayName = new Date(day.time * 1000).toLocaleDateString("en-US", { weekday: 'short' });
 
             forecastHtml += `
                 <li class="forcast-item">
-                    <div class="forcast-day">${dayName}</div>
-                    <div class="forcast-icon">
-                        <img src="${day.condition.icon_url}" alt="weather icon" />
+                    <div class="forcast-day">${formatDay(day.time)}</div> 
+                    <div class="icon-container">
+                        <img src="${day.condition.icon_url}" alt="weather icon" class="forecast-icon"/>
                     </div>
                     <div class="high-low-container">
                         <span class="forcast-highest-temp">${Math.round(day.temperature.maximum)}°</span>
